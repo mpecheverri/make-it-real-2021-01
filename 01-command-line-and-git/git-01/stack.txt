@@ -1,0 +1,10 @@
+git
+nodejs
+javascript
+react 
+nextjs
+circleci
+aws
+
+google firebase
+jenkins
