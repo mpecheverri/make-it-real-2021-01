@@ -1,3 +1,4 @@
+//"use strict"; //modo estricto
 //var n1; //esto lo hace por la característica de hoisting
 //para evitar utilizar las vbles no declaradas dentro de la función, se deben declarar las vbles dentro de cada función como let y const
 n1 = 5;
@@ -16,9 +17,8 @@ sum();
 multiply();
 
 /****************** */
-
+n3 = 20;
 function sum2() {
-  const n3 = 5;
   const n4 = 8;
   console.log(`El resultado es ${n3 + n4}`);
 }

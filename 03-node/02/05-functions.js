@@ -1,4 +1,4 @@
 function saludar() {
   console.log(`hola!`);
 }
-saludar();
+saludar();//invocar la función
