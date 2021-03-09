@@ -1,6 +1,3 @@
-console.log("");
-console.log("Autor: Carlos Guzmán");
-console.log("");
 /* 
     Ejercicio:
 
@@ -67,7 +64,8 @@ const personas = [
     }
   ];
 
-
   // Solución al ejercicio.
-  let personasIngles = personas.filter(persona => persona.idiomas.includes("EN"));
-  personasIngles.map(el => el.verEdad());
+  let personasQueHablanIngles = 
+    personas
+      .filter(persona => persona.idiomas.includes("EN"))
+      .map(el => el.verEdad());
