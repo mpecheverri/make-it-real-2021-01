@@ -56,3 +56,17 @@ const objetoLiteralPersona = {
 
 console.log(objetoLiteralPersona.nombre);
 console.log(objetoLiteralPersona.getNombre());
+
+//Object.keys
+const keys = Object.keys(objetoLiteralPersona);
+console.log(keys);
+
+//Object.values
+const values = Object.values(objetoLiteralPersona);
+console.log(values);
+
+//Object.assign
+const destino = { n1: 1, n2: 2 };
+const fuente = { n3: 3, n4: 4 };
+Object.assign(destino, fuente);
+console.log(destino);
