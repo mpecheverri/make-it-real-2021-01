@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/jestrade/make-it-real-2021-01/issues"
   },
-  "homepage": "https://github.com/jestrade/make-it-real-2021-01#readme"
+  "homepage": "https://github.com/jestrade/make-it-real-2021-01#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1"
+  }
 }
