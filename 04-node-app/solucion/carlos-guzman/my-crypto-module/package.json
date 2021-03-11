@@ -1,0 +1,11 @@
+{
+  "name": "my-crypto-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlos Guzmán <cags84@gmail.com>",
+  "license": "ISC"
+}
