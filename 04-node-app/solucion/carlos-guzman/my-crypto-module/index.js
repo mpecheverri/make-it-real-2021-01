@@ -4,12 +4,16 @@
     //string para HASH -> ABCDEFGHIJKLMNOPQRSTUVWXYZ
  */
 
-const { cifrarCadena } = require("./encrypt");
-const { descifrarCadena } = require("./decrypt");
+const { cifrarCadena, descifrarCadena } = require("./crypto");
 
 console.clear();
 
-const cadenaEntrada = "hola mundo";
+const cadenaEntrada = process.argv;
+let cadenaEntradaNormalizada = cadenaEntrada.splice(2).join(" ");
+cadenaEntradaNormalizada = 
+  (cadenaEntradaNormalizada !== "") 
+    ? cadenaEntradaNormalizada.trim()
+    : "hola mundo";
 
 console.log("");
 console.log("------------------------------------------------------------------------");
@@ -18,7 +22,7 @@ console.log("");
 console.log(`Resultado de la encriptación de la cadena "${cadenaEntrada}":`);
 console.log("");
 
-const resStringHash = cifrarCadena(cadenaEntrada);
+const resStringHash = cifrarCadena(cadenaEntradaNormalizada);
 
 console.log(
   `La cadena sin cifrar (normalizada): ${resStringHash.stringNormalize}`
