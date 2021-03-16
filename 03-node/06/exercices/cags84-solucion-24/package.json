@@ -19,7 +19,9 @@
     "url": "https://github.com/jestrade/make-it-real-2021-01/issues"
   },
   "homepage": "https://github.com/jestrade/make-it-real-2021-01#readme",
-  "devDependencies": {
-    "faker": "^5.4.0"
+  "devDependencies": {},
+  "dependencies": {
+    "faker": "^5.4.0",
+    "line-reader": "^0.4.0"
   }
 }
