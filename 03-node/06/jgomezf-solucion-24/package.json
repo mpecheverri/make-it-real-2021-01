@@ -1,0 +1,14 @@
+{
+  "name": "jgomezf-solucion-24",
+  "version": "1.0.0",
+  "description": "solucion al ejercicio #24",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "juan david gomez forero",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^5.4.0"
+  }
+}
