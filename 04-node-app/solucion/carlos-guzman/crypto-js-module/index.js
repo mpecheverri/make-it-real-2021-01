@@ -1,22 +1,25 @@
-const { AES, enc } = require('crypto-js');
+const { cryptoFunction } = require('./lib-crypto.js');
 
 const cadenaEntrada = process.argv;
-const cadena = cadenaEntrada.splice(2).join(" ");
-const cadenaSecreta = "o++2+11!!s..s9209dzzxsswsm123nks";
+const cadenaTemp = cadenaEntrada.splice(2).join(" ");
+const cadenaNormalizada = 
+  (cadenaTemp !== "") 
+    ? cadenaTemp 
+	: "cadena por defecto";
 
-const cipherText = AES.encrypt(cadena, cadenaSecreta).toString();
-const bytes = AES.decrypt(cipherText, cadenaSecreta);
-const stringOriginal = bytes.toString(enc.Utf8);
+// Llamamos a la funcion y recibimos los datos en forma de destructuración.
+const { cadena, cipherText, stringOriginal } = cryptoFunction(cadenaNormalizada);
+
 
 console.clear();
 console.log("-----------------------------------------------------------");
 
-console.log(" Solución con la libreria crypto-js");
+console.log("Solución con la libreria crypto-js");
 console.log("");
-console.log(`La cadena "${cadena}" cifrada con AES es: ${cipherText}"`);
+console.log(`La cadena "${cadena}" cifrada con AES es: \n\r ${cipherText}"`);
 console.log("");
 
-console.log(`La cadena cifrada "${cipherText}" es: "${stringOriginal}"`);
+console.log(`La cadena cifrada "${cipherText}" sin cifrado es: \n\r "${stringOriginal}"`);
 console.log("");
 
 console.log("-----------------------------------------------------------");
