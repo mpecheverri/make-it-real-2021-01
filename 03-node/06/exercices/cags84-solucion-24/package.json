@@ -1,0 +1,27 @@
+{
+  "name": "cags84-solucion-24",
+  "version": "1.0.0",
+  "description": "Solucion al ejercicio 24",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jestrade/make-it-real-2021-01.git"
+  },
+  "keywords": [
+    "JS"
+  ],
+  "author": "Carlos Guzman <cags84@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jestrade/make-it-real-2021-01/issues"
+  },
+  "homepage": "https://github.com/jestrade/make-it-real-2021-01#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "faker": "^5.4.0",
+    "line-reader": "^0.4.0"
+  }
+}
