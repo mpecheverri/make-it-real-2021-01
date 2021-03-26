@@ -4,3 +4,5 @@
 .thumbs
 .env
 **/.env
+*.log
+**/logs/*
