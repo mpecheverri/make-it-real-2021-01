@@ -2,3 +2,7 @@
 */coverage/*
 .DS_Store
 .thumbs
+.env
+**/.env
+*.log
+**/logs/*
