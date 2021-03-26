@@ -1,4 +1,4 @@
-const log = (req, res, next) => {
+const logger = (req, res, next) => {
   const datetime = new Date().toLocaleString();
   const { ip = '', method = '', path = '', hostname = '' } = req;
   console.log(`${datetime} :: ${method} :: ${hostname} :: ${path} :: ${ip}`);
@@ -6,4 +6,4 @@ const log = (req, res, next) => {
   next();
 };
 
-module.exports = { log };
+module.exports = { logger };
