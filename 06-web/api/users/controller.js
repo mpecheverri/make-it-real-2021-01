@@ -7,24 +7,20 @@ const list = (req, res) => {
 const create = (req, res) => {
   const { name, email, username, password } = req.body;
 
-  if (name && email && username && password) {
-      const user = {
-          name,
-          email,
-          username,
-          password,
-      };
+  const user = {
+    name,
+    email,
+    username,
+    password,
+  };
 
-      const found = users.filter((u) => u.username === user.username); //[], [{}]
+  const found = users.filter((u) => u.username === user.username);
 
-      if (found && found.length > 0) {
-          res.json({ message: `ya existe el usuario ${user.username}` });
-      } else {
-          users.push(user);
-          res.json(users);
-      }
+  if (found && found.length > 0) {
+    res.json({ message: `ya existe el usuario ${user.username}` });
   } else {
-      res.json({ message: `hay datos nulos` });
+    users.push(user);
+    res.json(users);
   }
 };
 
@@ -33,23 +29,23 @@ const update = (req, res) => {
   const { name, email, username, password } = req.body;
 
   if (name && email && username && password) {
-      const user = {
-          name,
-          email,
-          username,
-          password,
-      };
+    const user = {
+      name,
+      email,
+      username,
+      password,
+    };
 
-      let position = users.findIndex(u =>  u.username === usernameParam);
-      
-      if (position != -1) {
-          users[position] = user;
-          res.json(users);
-      } else {
-          res.json({ message: `No existe el usuario ${usernameParam}` });
-      }
-  }else{
-      res.json({ message: `Hay datos nulos` });
+    let position = users.findIndex((u) => u.username === usernameParam);
+
+    if (position != -1) {
+      users[position] = user;
+      res.json(users);
+    } else {
+      res.json({ message: `No existe el usuario ${usernameParam}` });
+    }
+  } else {
+    res.json({ message: `Hay datos nulos` });
   }
 };
 

@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const users = require('./users/router');
+
 const { config } = require('./../config');
 
 const router = express.Router();
