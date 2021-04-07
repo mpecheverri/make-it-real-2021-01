@@ -23,6 +23,7 @@ npm install
 ```
 HTTP_PORT=
 LOG_ACCESS=
+JWTKEY=
 ```
 
 ## Run the app

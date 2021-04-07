@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken');
+const { config } = require('./../../config');
 let { users } = require('./model');
 
 const list = (req, res) => {
@@ -49,4 +51,24 @@ const update = (req, res) => {
   }
 };
 
-module.exports = { list, create, update };
+const authenticate = (req, res) => {
+  const { username, password } = req.body;
+
+  const user = {
+    username,
+    password,
+  };
+
+  const found = users.filter(
+    (u) => u.username === user.username && u.password === user.password
+  );
+
+  if (found && found.length > 0) {
+    const token = jwt.sign({ username: user.username }, config.jwtKey);
+    res.json({ token });
+  } else {
+    res.json({ message: 'user not exists' });
+  }
+};
+
+module.exports = { list, create, update, authenticate };
