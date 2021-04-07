@@ -7,10 +7,17 @@ const router = express.Router();
 
 router.use(logger);
 
-router.route('/').get(authenticator, list).post(validateUser, create);
+router
+  .route('/') //
+  .get(authenticator, list) //list
+  .post(validateUser, create); //create
 
-router.route('/login').post(validateLogin, login);
+router
+  .route('/login') //
+  .post(validateLogin, login);
 
-router.route('/:username').put(update);
+router
+  .route('/:username') //
+  .put(update);
 
 module.exports = router;

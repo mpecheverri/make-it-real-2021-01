@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 const users = require('./users/router');
+const tweets = require('./tweets/router');
+const weather = require('./weather/router');
 
 const { config } = require('./../config');
 
@@ -15,5 +17,7 @@ const logStream = fs.createWriteStream(path.join(__dirname, accessLogDir), {
 
 router.use(morgan('combined', { stream: logStream }));
 router.use('/users', users);
+router.use('/tweets', tweets);
+router.use('/weather', weather);
 
 module.exports = router;

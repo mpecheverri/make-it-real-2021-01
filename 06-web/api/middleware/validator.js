@@ -1,3 +1,21 @@
+const validateTweet = (req, res, next) => {
+  const { content } = req.body;
+  const errors = [];
+
+  if (content) {
+    if (content.length > 280) {
+      errors.push('max characters exceded');
+    }
+  } else {
+    errors.push('empty data');
+  }
+  if (errors.length === 0) {
+    next();
+  } else {
+    res.status(500).json({ message: errors });
+  }
+};
+
 const validateLogin = (req, res, next) => {
   const { username, password } = req.body;
   const errors = [];
@@ -12,7 +30,7 @@ const validateLogin = (req, res, next) => {
   if (errors.length === 0) {
     next();
   } else {
-    res.json({ message: errors });
+    res.status(500).json({ message: errors });
   }
 };
 
@@ -45,14 +63,14 @@ const validateUser = (req, res, next) => {
       errors.push('invalid password');
     }
   } else {
-    errors.push('empty data');
+    errors.status(500).push('empty data');
   }
 
   if (errors.length === 0) {
     next();
   } else {
-    res.json({ message: errors });
+    res.status(500).json({ message: errors });
   }
 };
 
-module.exports = { validateUser, validateLogin };
+module.exports = { validateUser, validateLogin, validateTweet };

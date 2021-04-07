@@ -24,6 +24,7 @@ npm install
 HTTP_PORT=
 LOG_ACCESS=
 JWTKEY=
+APIWEATHERKEY=
 ```
 
 ## Run the app
