@@ -51,7 +51,7 @@ const update = (req, res) => {
   }
 };
 
-const authenticate = (req, res) => {
+const login = (req, res) => {
   const { username, password } = req.body;
 
   const user = {
@@ -71,4 +71,4 @@ const authenticate = (req, res) => {
   }
 };
 
-module.exports = { list, create, update, authenticate };
+module.exports = { list, create, update, login };
