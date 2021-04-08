@@ -73,4 +73,10 @@ const login = (req, res) => {
   }
 };
 
-module.exports = { list, create, update, login };
+const remove = (req, res) => {
+  const { username } = req.body;
+  users = users.filter((user) => user.username !== username);
+  res.status(200).json(users);
+};
+
+module.exports = { list, create, update, login, remove };

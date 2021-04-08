@@ -5,12 +5,12 @@ const list = (req, res) => {
 };
 
 const create = (req, res) => {
-  const { content, username } = req.body;
+  const { content, authUsername } = req.body;
   const date = new Date().toDateString();
 
   const tweet = {
     content,
-    username,
+    username: authUsername,
     date,
   };
   tweets.push(tweet);
