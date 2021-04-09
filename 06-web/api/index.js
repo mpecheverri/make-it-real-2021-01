@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const helmet = require('helmet');
 const fs = require('fs');
 const path = require('path');
 const { localization } = require('./middleware/localization');
@@ -16,6 +17,7 @@ const logStream = fs.createWriteStream(path.join(__dirname, accessLogDir), {
   flags: 'a',
 });
 
+router.use(helmet());
 router.use(morgan('combined', { stream: logStream }));
 router.use(localization);
 router.use('/users', users);
